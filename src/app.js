@@ -12,6 +12,8 @@ mongoose.connect("mongodb+srv://Kyllder:kyllder@ndstr-tczgv.azure.mongodb.net/te
 
 //Carrega os Models
 const Product = require('./models/product');
+const Customer = require('./models/customer');
+const Order = require('./models/order');
 
 //Carrega as Rotas
 const indexRoute = require('./routes/index-route');
