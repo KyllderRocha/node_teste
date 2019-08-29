@@ -3,10 +3,8 @@ const mongoose = require('mongoose');
 const Customer = mongoose.model('Customer');
 
 exports.get = async() => {
-    const res = await Product
-        .find({
-            active:true
-        }, 'title price slug');
+    const res = await Customer
+        .find({},'name email password');
         return res;
 }
 
