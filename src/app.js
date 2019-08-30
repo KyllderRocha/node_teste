@@ -3,12 +3,13 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
+const config = require('./config');
 
 const app = express();
 const router = express.Router();
 
 //Conecta Banco
-mongoose.connect("mongodb+srv://Kyllder:kyllder@ndstr-tczgv.azure.mongodb.net/test?retryWrites=true&w=majority", {useNewUrlParser: true});
+mongoose.connect(config.connectionString, {useNewUrlParser: true});
 
 //Carrega os Models
 const Product = require('./models/product');
@@ -19,6 +20,7 @@ const Order = require('./models/order');
 const indexRoute = require('./routes/index-route');
 const productsRoute = require('./routes/products-route');
 const customerRoute = require('./routes/customer-route');
+const orderRoute = require('./routes/order-route');
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -26,5 +28,6 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use('/', indexRoute);
 app.use('/products', productsRoute);
 app.use('/customers', customerRoute);
+app.use('/orders', orderRoute);
 
 module.exports = app;
