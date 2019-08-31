@@ -34,6 +34,7 @@ app.use((req, res, next) => {
     next();
 });
 
+
 app.use('/', indexRoute);
 app.use('/products', productsRoute);
 app.use('/customers', customerRoute);
