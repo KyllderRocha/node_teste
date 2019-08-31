@@ -39,5 +39,8 @@ app.use('/', indexRoute);
 app.use('/products', productsRoute);
 app.use('/customers', customerRoute);
 app.use('/orders', orderRoute);
+app.use('/favicon.ico', (req, res, next) => {
+    next();
+})
 
 module.exports = app;
