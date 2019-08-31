@@ -16,7 +16,7 @@ const schema = new Schema({
         index: true,
         unique: true
     },
-    descrition:{
+    description:{
         type: String,
         required: true,
     },
@@ -31,7 +31,7 @@ const schema = new Schema({
     },
     tags: [{
         type: String,
-        required: true,
+        required: true
     }]
 });
 
